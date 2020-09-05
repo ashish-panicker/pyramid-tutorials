@@ -3,7 +3,7 @@
 Pyramid is web development framwork in python that helps us to create a scalable web application.
 
 Setting up pyramid in linux
-```bash
+```sh
 # set an environment variable to where you want your virtual␣ environment
 export VENV=~/pyramid/env
 
@@ -18,7 +18,7 @@ $VENV/bin/python <path-to-app.py>
 ```
 ## Sample hello world application using pyramid
 
-```bash
+```sh
 # Create the hello_world work directory
 mkdir hello_world
 
@@ -55,7 +55,7 @@ Python’s way of saying ”Start here when running from the command line”.
 	serve(app, host='0.0.0.0', port=6543)
 ```
 Run the helloworld application
-```bash
+```sh
 # exceute the application
 $VENV/bin/python ./hello_world/app.py
 ```
@@ -143,7 +143,7 @@ if __name__ == '__main__':
 ```
 Exceute the applciation
 
-```bash
+```sh
 # exceute the application
 $VENV/bin/python ./multi_views/app.py
 ```
@@ -192,7 +192,7 @@ if __name__ == '__main__':
 
 ```
 
-```bash
+```sh
 # Run the application as 
 $VENV/bin/python ./multi_views/app.py
 ```
@@ -203,7 +203,7 @@ Browse to http://192.168.24.133:6543/welcome/ashish/s to see the output
 
 Insted of rendering raw html we can use a templating engine like jinja in pyramid.
 
-```bash
+```sh
 # Install jinja2
 $VENV/bin/pip install pyramid_jinja2
 
@@ -258,7 +258,7 @@ def hello_world(request):
     </body>
 </html>
 ```
-```bash
+```sh
 # Execute the application and verify the output
 $VENV/bin/python  ./templated_views/app.py 
 ```
@@ -268,7 +268,7 @@ $VENV/bin/python  ./templated_views/app.py
 Resources like css files, images are called static resources.
 To accomplish this we use the **config.add_static_view(name='', path='')**
 
-```bash
+```sh
 # Create a folder named static to host all the static resources
 mkdir -p templated_views/static
 
