@@ -1,5 +1,6 @@
 # Getting started with web development in python using pyramid
-Pyramid lets us start small and finish big. 
+
+Pyramid is web development framwork in python that helps us to create a scalable web application.
 
 Setting up pyramid in linux
 ```bash
@@ -15,12 +16,19 @@ $ $VENV/bin/pip install pyramid
 # exceute the application
 $VENV/bin/python <path-to-app.py>
 ```
-### Sample python code
+## Sample hello world application using pyramid
+
+```bash
+# Create the hello_world work directory
+mkdir hello_world
+
+# Create the app.py python file
+touch hello_world/app.py
+```
 
 ```python
 '''
-make a folder called hello_word
-save the file as hello_world/app.py
+This is a simple hello world application.
 '''
 from waitress import serve
 from pyramid.config import Configurator
@@ -38,7 +46,6 @@ def  hello_world(request):
 
 if __name__ == '__main__': 
 '''
-if __name__ == '__main__': 
 Python’s way of saying ”Start here when running from the command line”.
 '''
 	with Configurator() as config:
@@ -47,13 +54,17 @@ Python’s way of saying ”Start here when running from the command line”.
 		app = config.make_wsgi_app()
 	serve(app, host='0.0.0.0', port=6543)
 ```
+Run the helloworld application
 ```bash
 # exceute the application
 $VENV/bin/python ./hello_world/app.py
 ```
-Browse to http://localhost:6543/ to view the application.
+Browse to **http://localhost:6543/** to view the application.
 
-###  Reading request data
+##  Reading http request
+
+Every request made by the client is sent an http request.
+
 ```python
 
 '''
@@ -79,7 +90,7 @@ def hello_world(request):
 		body=body
 	)
 ```
-### Creating a multi views multi url demo
+## Creating a multi views multi url demo
 ```python
 '''
 Create a folder called multi_view
@@ -109,7 +120,9 @@ def  redirect_view(request):
 @view_config(route_name = 'exception')
 def  exception_view(request):
 	raise  Exception()
+```
 
+```python
 '''
 add the following code in app.py
 '''
@@ -128,6 +141,7 @@ if __name__ == '__main__':
 		app = config.make_wsgi_app()
 	serve(app, host='0.0.0.0', port=6543)
 ```
+Exceute the applciation
 
 ```bash
 # exceute the application
@@ -136,7 +150,7 @@ $VENV/bin/python ./multi_views/app.py
 
 **@view_config** is used in declarative configuration where are **add_view()** is and example declarative configurarion
 
-### More URL
+## More URL
 
 Instead of using a query string parameters like http://localhost:6543/welcome?first=Ashish&last=Panicker what if wanted to use path values like http://localhost:6543/welcome/Ashish/Panicker
 
@@ -299,7 +313,7 @@ if __name__ == '__main__':
     serve(app, host='0.0.0.0', port=6543)
 ```
 
-### References
+## References
 
 [Configurator docs](https://docs.pylonsproject.org/projects/pyramid/en/latest/api/config.html)
 [add_route()](https://docs.pylonsproject.org/projects/pyramid/en/latest/api/config.html#pyramid.config.Configurator.add_route)
