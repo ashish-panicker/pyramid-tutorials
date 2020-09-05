@@ -312,6 +312,29 @@ if __name__ == '__main__':
         app = config.make_wsgi_app()
     serve(app, host='0.0.0.0', port=6543)
 ```
+## JSON responses
+
+Web applications can send more than HTML as its response, modern web applciations can send data in JSON format, especially useful when creating REST api's
+
+Add the following route in the **views.py** file
+```python
+
+'''views.py'''
+@view_config(route_name='hello_json', renderer='json')
+def hello_json(request):
+    return [1, 2, 3]
+```
+Add the following route in the **app.py** file
+
+```python
+config.add_route('hello_json', '/hello.json')
+```
+
+Run the application
+```sh
+# Execute the application and verify the output
+$VENV/bin/python  ./templated_views/app.py 
+```
 
 ## References
 
