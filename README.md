@@ -1,4 +1,3 @@
-
 # Getting started with web development in python using pyramid
 Pyramid lets us start small and finish big. 
 
