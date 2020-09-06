@@ -336,6 +336,24 @@ Run the application
 $VENV/bin/python  ./templated_views/app.py 
 ```
 
+## Cookiecuter
+
+```sh
+# Install cookiecutter 
+$VENV/bin/pip install cookiecutter
+```
+
+```sh
+# Creating a sample project using cookiecutter
+ $VENV/bin/cookiecutter gh:Pylons/pyramid-cookiecutter-starter
+```
+
+## jinja2
+
+## MVC
+
+## Database connection
+
 ## References
 
 [Configurator docs](https://docs.pylonsproject.org/projects/pyramid/en/latest/api/config.html)

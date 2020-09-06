@@ -1,6 +1,6 @@
 from waitress import serve
 from pyramid.config import Configurator
-from pyramid.response import Response
+from pyramid.response import Response   
 
 
 def hello_world(request):
@@ -20,3 +20,5 @@ if __name__ == '__main__':
         config.add_view(hello_world, route_name='hello')
         app = config.make_wsgi_app()
     serve(app, host='0.0.0.0', port=6543)
+
+#MVC
